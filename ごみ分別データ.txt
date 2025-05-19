@@ -1,0 +1,41 @@
+// ごみ分別データ
+const gomiData = {
+  "フライパン": "金属",
+  "紙パック": "資源ごみ",
+  "ペットボトル": "資源ごみ",
+  "牛乳パック": "資源ごみ",
+  "スチール缶": "資源ごみ"
+};
+
+// ごみ分別検索機能
+function searchGomi() {
+  const query = document.getElementById("searchInput").value;
+  const result = gomiData[query] || "分別方法が見つかりません";
+  document.getElementById("searchResult").textContent = `分別方法: ${result}`;
+}
+
+// カレンダー表示
+const schedule = [
+  { day: "月曜日", type: "燃えるごみ" },
+  { day: "火曜日", type: "資源ごみ"
+function classifyImage(event) {
+  const file = event.target.files[0];
+  if (!file) {
+    document.getElementById("photoResult").textContent = "写真が選択されていません";
+    return;
+  }
+
+  // 簡易的に画像ファイル名で分類（実際の画像解析ではなく）
+  const fileName = file.name.toLowerCase();
+  let result = "分類できませんでした";
+
+  if (fileName.includes("ペットボトル")) {
+    result = "ペットボトル: 資源ごみ";
+  } else if (fileName.includes("フライパン")) {
+    result = "フライパン: 金属";
+  } else if (fileName.includes("缶")) {
+    result = "缶: 資源ごみ";
+  }
+
+  document.getElementById("photoResult").textContent = `判定結果: ${result}`;
+}

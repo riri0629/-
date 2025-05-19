@@ -1,0 +1,21 @@
+function classifyImage(event) {
+  const file = event.target.files[0];
+  if (!file) {
+    document.getElementById("photoResult").textContent = "写真が選択されていません";
+    return;
+  }
+
+  // 簡易的に画像ファイル名で分類（実際の画像解析ではなく）
+  const fileName = file.name.toLowerCase();
+  let result = "分類できませんでした";
+
+  if (fileName.includes("ペットボトル")) {
+    result = "ペットボトル: 資源ごみ";
+  } else if (fileName.includes("フライパン")) {
+    result = "フライパン: 金属";
+  } else if (fileName.includes("缶")) {
+    result = "缶: 資源ごみ";
+  }
+
+  document.getElementById("photoResult").textContent = `判定結果: ${result}`;
+}

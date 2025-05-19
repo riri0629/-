@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>小樽市 ごみ出しナビ（稲穂1丁目）</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>小樽市 ごみ出しナビ（稲穂1丁目）</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>🔍 ごみの分別検索</h2>
+      <input type="text" id="searchInput" placeholder="例：フライパン">
+      <button onclick="searchGomi()">検索</button>
+      <p id="searchResult"></p>
+    </section>
+
+    <section>
+      <h2>📆 今週のごみ出しカレンダー</h2>
+      <div id="calendar"></div>
+    </section>
+
+    <section>
+      <h2>📷 ごみの写真から判定</h2>
+      <input type="file" accept="image/*" onchange="classifyImage(event)">
+      <p id="photoResult"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 ごみ出しナビ</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="photo-classify.js"></script>
+</body>
+</html>
